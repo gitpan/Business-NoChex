@@ -9,27 +9,7 @@ use CGI qw/:cgi/;
 
 use Class::MethodMaker;
 
-require Exporter;
-
-our @ISA = qw(Exporter);
-
-# Items to export into callers namespace by default. Note: do not export
-# names by default without a very good reason. Use EXPORT_OK instead.
-# Do not simply export all your public functions/methods/constants.
-
-# This allows declaration	use Business::NoChex ':all';
-# If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
-# will save memory.
-our %EXPORT_TAGS = ( 'all' => [ qw(
-	
-) ] );
-
-our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-
-our @EXPORT = qw(
-	
-);
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 our $REFERAL_URL = 'https://www.nochex.com/nochex.dll/apc/apc';
 
@@ -75,14 +55,13 @@ sub verify{
   else { $self->set_no_response; return 0; }
 }
 
-# Preloaded methods go here.
 
 1;
 __END__
 
 =head1 NAME
 
-Business::NoChex - Perl extension for blah blah blah
+Business::NoChex - Perl extension for the validation of NoChex payments 
 
 =head1 SYNOPSIS
 
